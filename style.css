@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    /* border: 2px solid; */
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    overflow: hidden;
+}
+
+/* main container */
+.container {
+    position: relative;
+    background: url('bg.png');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+/* actual game area */
+.box {
+    height: 92vmin;
+    width: 90vmin;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    background-image: linear-gradient(to bottom, rgb(129, 255, 129), rgb(255, 255, 122));
+    border: 2px solid;
+    box-shadow: 0px 10px 4rem rgba(0, 0, 0, 1);
+    z-index: 1;
+}
+
+.scoreborad {
+    position: absolute;
+    top: 3rem;
+    right: 20rem;
+    height: 5rem;
+    width: auto;
+    font-size: 3rem;
+    font-weight: bold;
+    /* border: 2px solid; */
+    font-family: 'New Tegomin', serif;
+}
+
+.Highscore {
+    position: absolute;
+    top: 8rem;
+    right: 14rem;
+    height: 5rem;
+    width: auto;
+    font-size: 3rem;
+    font-weight: bold;
+    /* border: 2px solid; */
+    font-family: 'New Tegomin', serif;
+}
+
+.gameoverAlert {
+    visibility: hidden;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    transition: all 0.5s;
+    height: 20rem;
+    width: 34rem;
+    top: 36vh;
+    left: 39vw;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 1);
+    z-index: 2;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.gameoverAlert .playAgain {
+    height: 3rem;
+    width: 10rem;
+    background-color: greenyellow;
+    border: none;
+    border-radius: 0.5rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 500;
+}
+
+.playAgain:hover {
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 3.6rem;
+}
+
+.FinalScore {
+    font-size: 1.7rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.head {
+    background-color: #F2AA4CFF;
+    border-radius: 18px;
+    border: 2px solid #464646;
+    transform: scale(1.02);
+    box-shadow: 0px 0px 8px red inset;
+    /* background: url('snakeM.png');
+    background-size: cover; */
+    /* transform: scaleY(1);For down side */
+    /* transform: rotate(90deg);for right side */
+    /* transform: rotate(270deg);for left side */
+}
+
+.snake {
+    background-color: #101820FF;
+    border-radius: 20px;
+    border: 2px solid white;
+}
+
+.food {
+    filter: drop-shadow(3px 0px 3px rgba(0, 0, 0, 0.5));
+    background: url('food.ico');
+    background-size: cover;
+    border-radius: 100%;
+    transform: scale(1.1);
+}
+
+/* for mobile device controls */
+.controls {
+    position: absolute;
+    bottom: 9rem;
+    /* background-color: blue; */
+    height: 22rem;
+    width: 35rem;
+}
+
+.controls .btn {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 100%;
+    border: none;
+    outline: none;
+}
+
+
+.btn img {
+    height: 10rem;
+}
+
+#up {
+    position: absolute;
+    top: 0.1rem;
+    left: 13rem;
+}
+
+#down {
+    position: absolute;
+    top: 12rem;
+    left: 13rem;
+}
+
+#right {
+    position: absolute;
+    top: 6rem;
+    right: 2rem;
+}
+
+#left {
+    position: absolute;
+    top: 6rem;
+    left: 2rem;
+}
+
+/*for making website responsive */
+@media (max-width:1280px) {
+    html {
+        font-size: 42%;
+    }
+    .scoreborad {
+        top: 8rem;
+        right: 13rem;
+    }
+
+    .Highscore {
+        top: 15rem;
+        right: 8rem;
+    }
+
+    .controls {
+        bottom: 10rem;
+        left: 5rem;
+    }
+
+    .gameoverAlert .playAgain {
+        width: 15rem;
+    }
+
+    .FinalScore {
+        font-size: 2.7rem;
+    }
+}
+
+@media (max-width:415px) {
+    html {
+        font-size: 38%;
+    }
+
+    .controls {
+        bottom: 13rem;
+        left: 16rem;
+    }
+
+    .scoreborad {
+        top: 14rem;
+    }
+
+    .Highscore {
+        top: 20rem;
+        right: 8rem;
+    }
+    .gameoverAlert{
+        top:45vh;
+        left: 25vw;
+    }
+}
+
+@media (max-width:380px) {
+    html {
+        font-size: 30%;
+    }
+
+    .controls {
+        bottom: 6rem;
+        left: 23rem;
+    }
+
+   
+    .gameoverAlert {
+        top: 44vh;
+        left: 29vw;
+        height: 25rem;
+        width: 40rem;
+    }
+    .gameoverAlert .playAgain{
+        height: 4rem;
+        width: 20rem;
+        font-size: 2.2rem;
+    }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnakeMania - Where is my food</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png">
+</head>
+
+<body>
+    <div class="gameoverAlert">
+        <h1>GAME OVER</h1>
+        <span class="FinalScore">Your Score : 0</span>
+        <button type="button" class="playAgain" onclick="window.location.reload()">Play Again</button>
+    </div>
+    <div class="container">
+        <div class="controls">
+            <button class="btn" id="up" onclick="virbate()"><img src="upArrow.png" alt=""></button>
+            <button class="btn" id="down" onclick="virbate()"><img src="downArrow.png" alt=""></button>
+            <button class="btn" id="right" onclick="virbate()"><img src="rightArrow.png" alt=""></button>
+            <button class="btn" id="left" onclick="virbate()"><img src="leftArrow.png" alt=""></button>
+        </div>
+        <div class="scoreborad">
+            Score : 0
+        </div>
+        <div class="Highscore">
+            HighScore
+        </div>
+
+        <div class="box">
+
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
