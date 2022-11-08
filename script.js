@@ -131,7 +131,7 @@ function gameEngine() {
 //main logic start here
 window.requestAnimationFrame(main);//we use this insted of settimeout and setinternal   
 function virbate(){
-    navigator.vibrate(100);
+    navigator.vibrate(10);
 }
 //note:-requestAnimationFrame is so useful is the fact that it gives you a time variable which you can use to calculate the amount of time between frames.
 
